@@ -1,19 +1,18 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import Sidebar from '../components/Sidebar'
 
 export default function Dashboard() {
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if (!localStorage.getItem('token')) {
-      navigate('/login')
-    }
-  }, [navigate])
-
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>You are logged in! 🎉</p>
+    <div
+      style={{
+        display: 'flex',
+        minHeight: '100vh',
+      }}
+    >
+      <Sidebar />
+
+      <main style={{ padding: 24 }}>
+        <h1>Dashboard</h1>
+      </main>
     </div>
   )
 }
